@@ -1,0 +1,64 @@
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase; /* 转换成大写 */
+  backface-visibility: hidden; /* 定义当元素不面向屏幕时是否可见 */
+  margin-bottom: 6rem;
+
+  @include respond(phone){
+    letter-spacing: .5rem; // 设置字间距
+  }
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem; /* 调整字间距 */
+    animation-name: moveInLeft; /* 动画的名字 */
+    animation-duration: 1s;
+    animation-timing-function: ease-out; /* 组件加快 */
+    /* animation-iteration-count: 3; */ /* 动画触发的次数 */
+    /* animation-delay: 3s; */
+    @include respond(phone){
+      letter-spacing: 1rem; // 设置字间距
+    }
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    animation: moveInRight 1s ease-out;
+  }
+}
+.heading-secondary{
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s;
+
+  @include respond(tab-port){
+    font-size: 3rem;
+  }
+  @include respond(phone){
+    font-size: 2.5rem;
+  }
+  &:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);  
+  }
+  text-shadow: .5rem 1rem 2rem rgba($color-black, .2); 
+}
+.heading-tertiary{
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+} 
+.paragraph{
+  font-size: $default-font-size; 
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+}
